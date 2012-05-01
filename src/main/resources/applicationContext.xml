@@ -10,10 +10,11 @@
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
     http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
 
+    <context:component-scan base-package="quickstart" />
+    <context:annotation-config />
+
     <bean
         class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
-
-    <bean id="personService" class="quickstart.service.PersonServiceImpl" />
 
     <bean id="entityManagerFactory"
         class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
@@ -41,9 +42,4 @@
     </bean>
 
     <tx:annotation-driven transaction-manager="transactionManager" />
-
-    <bean id="personAction" scope="prototype"
-        class="quickstart.action.PersonAction">
-        <property name="service" ref="personService" />
-    </bean>
 </beans>

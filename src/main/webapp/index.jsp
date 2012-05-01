@@ -2,7 +2,7 @@
 <%@ taglib prefix="sx" uri="/struts-dojo-tags" %>
 <html>
 	<head>
-		<sx:head debug="true" cache="false" compressed="false" />
+		<sx:head/>
 		<script type="text/javascript">
 			dojo.event.topic.subscribe("/save", function(data, type, request) {
 			    if(type == "load") {

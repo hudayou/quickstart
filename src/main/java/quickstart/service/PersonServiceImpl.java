@@ -7,10 +7,12 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.stereotype.Service;
 
 import quickstart.model.Person;
 
 @Transactional
+@Service("personService")
 public class PersonServiceImpl implements PersonService {
     private EntityManager em;
 

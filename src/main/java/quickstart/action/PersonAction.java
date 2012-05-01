@@ -2,18 +2,27 @@ package quickstart.action;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import quickstart.model.Person;
 import quickstart.service.PersonService;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.Preparable;
+import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Required;
+import org.springframework.context.annotation.Scope;
 
+@Scope("prototype")
+@Component
 public class PersonAction implements Preparable {
     private PersonService service;
     private List<Person> persons;
     private Person person;
     private Integer id;
 
+    @Required
+    @Resource(name="personService")
     public void setService(PersonService service) {
         this.service = service;
     }
