@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import quickstart.model.Person;
 
 @Transactional
-@Service("personService")
+@Service
 public class PersonServiceImpl implements PersonService {
     private EntityManager em;
 
