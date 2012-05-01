@@ -7,6 +7,11 @@
     <constant name="struts.devMode" value="true" />
 
     <package name="person" extends="struts-default">
+        <default-action-ref name="index"/>
+
+        <action name="index">
+            <result>index.jsp</result>
+        </action>
 
         <action name="list" method="execute" class="personAction">
             <result>pages/list.jsp</result>

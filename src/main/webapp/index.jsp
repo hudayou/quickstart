@@ -1,7 +1,8 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="sx" uri="/struts-dojo-tags" %>
 <html>
 	<head>
-		<s:head theme="ajax" debug="true"/>
+		<sx:head debug="true" cache="false" compressed="false" />
 		<script type="text/javascript">
 			dojo.event.topic.subscribe("/save", function(data, type, request) {
 			    if(type == "load") {
@@ -30,9 +31,9 @@
 
         <div style="width: 300px;border-style: solid">
         	<div style="text-align: right;">
-    			<s:a theme="ajax" notifyTopics="/refresh">Refresh</s:a>
+    			<sx:a notifyTopics="/refresh">Refresh</sx:a>
     		</div>
-    		<s:div id="persons" theme="ajax" href="%{descrsUrl}" loadingText="Loading..." listenTopics="/refresh"/>
+    		<sx:div id="persons" href="%{descrsUrl}" loadingText="Loading..." listenTopics="/refresh"/>
         </div>
 
         <br/>
@@ -43,7 +44,7 @@
 			    <s:textfield id="id" name="person.id" cssStyle="display:none"/>
 				<s:textfield id="firstName" label="Fisrt Name" name="person.firstName"/>
 				<s:textfield id="lastName" label="Last Name" name="person.lastName"/>
-				<s:submit theme="ajax" targets="persons" notifyTopics="/save"/>
+				<sx:submit targets="persons" notifyTopics="/save"/>
 			</s:form>
 		</div>
 	</body>
