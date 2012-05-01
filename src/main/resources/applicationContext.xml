@@ -42,6 +42,6 @@
 
     <bean id="personAction" scope="prototype"
         class="quickstart.action.PersonAction">
-        <constructor-arg ref="personService" />
+        <property name="service" ref="personService" />
     </bean>
 </beans>

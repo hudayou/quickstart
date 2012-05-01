@@ -14,7 +14,7 @@ public class PersonAction implements Preparable {
     private Person person;
     private Integer id;
 
-    public PersonAction(PersonService service) {
+    public void setService(PersonService service) {
         this.service = service;
     }
 

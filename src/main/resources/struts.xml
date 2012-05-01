@@ -23,5 +23,4 @@
             <result name="input">pages/list.jsp</result>
         </action>
     </package>
-
 </struts>
