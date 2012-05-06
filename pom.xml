@@ -19,7 +19,7 @@
 		<!-- Download JTA from here: http://java.sun.com/products/jta/
 	            and rename it to jta-1.0.1B.jar-->
 	        <!-- Install JTA using:
-	            mvn install:install-file -DgroupId=javax.transaction -DartifactId=jta 
+	            mvn install:install-file -DgroupId=javax.transaction -DartifactId=jta
 	            -Dversion=1.0.1B -Dpackaging=jar -Dfile=c:\path\to\jar\jta-1.0.1B.jar
 		-->
 
@@ -29,13 +29,13 @@
             <artifactId>jta</artifactId>
             <version>1.1</version>
         </dependency>
-		
+
 		<dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>persistence-api</artifactId>
             <version>1.0</version>
         </dependency>
-		
+
 		<!-- MySql -->
         <dependency>
             <groupId>mysql</groupId>
@@ -67,14 +67,14 @@
             <version>1.2.16</version>
             <scope>runtime</scope>
         </dependency>
-		
+
         <!-- spring -->
 		<dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>${org.springframework.version}</version>
         </dependency>
-		
+
 		<dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
@@ -117,14 +117,14 @@
             <artifactId>spring-aop</artifactId>
             <version>${org.springframework.version}</version>
         </dependency>
-		
+
         <!-- struts -->
 		<dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-core</artifactId>
             <version>${org.apache.struts.version}</version>
         </dependency>
-		
+
 		<dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-spring-plugin</artifactId>
@@ -146,7 +146,7 @@
             <artifactId>cglib</artifactId>
             <version>2.2.2</version>
         </dependency>
-          	
+
 		<!-- Hibernate -->
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -159,7 +159,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-		
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -173,7 +173,7 @@
 			<version>2.4</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jsp-api</artifactId>
