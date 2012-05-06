@@ -26,6 +26,27 @@
                 <property name="showSql" value="true" />
             </bean>
         </property>
+        <!-- specify hibernate properties method one
+        <property name="jpaPropertyMap">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
+        -->
+        <!-- specify hibernate properties method two
+        <property name="jpaPropertyMap">
+            <map>
+                <entry key="hibernate.cache.use_second_level_cache" value="true"/>
+                <entry key="hibernate.cache.use_query_cache" value="true"/>
+                <entry key="hibernate.cache.provider_class" value="net.sf.ehcache.hibernate.SingletonEhCacheProvider"/>
+                <entry key="hibernate.show_sql" value="true" />
+                <entry key="hibernate.use_sql_comments" value="true" />
+                <entry key="hibernate.format_sql" value="true" />
+                <entry key="hibernate.dialect" value="org.hibernate.dialect.Oracle9Dialect" />
+            </map>
+        </property>
+        -->
     </bean>
 
     <bean id="dataSource"
@@ -34,6 +55,14 @@
         <property name="url" value="jdbc:mysql://localhost/quickstart" />
         <property name="username" value="quickstart" />
         <property name="password" value="quickstart" />
+        <!-- specify utf8 connection parameter for hibernate -->
+        <property name="connectionProperties">
+            <props>
+                <prop key="useUnicode">true</prop>
+                <prop key="characterEncoding">UTF-8</prop>
+                <prop key="charSet">UTF-8</prop>
+            </props>
+        </property>
     </bean>
 
     <bean id="transactionManager"

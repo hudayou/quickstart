@@ -7,6 +7,8 @@ import javax.annotation.Resource;
 import quickstart.model.Person;
 import quickstart.service.PersonService;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.Preparable;
 import org.springframework.stereotype.Component;
@@ -15,6 +17,9 @@ import org.springframework.context.annotation.Scope;
 @Scope("prototype")
 @Component
 public class PersonAction implements Preparable {
+
+    private static final Log log = LogFactory.getLog(PersonAction.class);
+
     @Resource
     private PersonService service;
     private List<Person> persons;
@@ -32,6 +37,8 @@ public class PersonAction implements Preparable {
 
     public String save() {
         this.service.save(person);
+        log.debug("person \"" + person.getFirstName() + " " +
+                 person.getLastName() + "\" saved");
         this.person = new Person();
         return execute();
     }
